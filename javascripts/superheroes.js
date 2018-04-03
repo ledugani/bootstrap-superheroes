@@ -12,9 +12,9 @@ const buildDomString = (heroes) => {
         domString +=        `</div>`;
         domString +=        `<div class='panel-body'>`;
         if (heroes[i].gender === 'Male') {
-            domString += `<img src='${heroes[i].image} class='charImage maleImage'>`;
+            domString += `<img src='${heroes[i].image}' class='charImage maleImage'>`;
         } else {
-            domString += `<img src='${heroes[i].image} class='charImage femaleImage'>`;
+            domString += `<img src='${heroes[i].image}' class='charImage femaleImage'>`;
         }
         domString +=            `<p class='charDescription'>${heroes[i].description}</p>`;
         domString +=        `</div>`;
