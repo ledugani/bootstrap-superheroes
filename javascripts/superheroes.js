@@ -2,16 +2,21 @@ const printToDom = (domString, divId) => {
     document.getElementById(divId).innerHTML = domString;
 };
 
-const buildDomString = fancyArray => {
+const buildDomString = (heroes) => {
     let domString = "";
-    fancyArray.forEach((hero) => {
-        domString += `<div class="col-md-4">`;
-        domString += `<img src="${hero.image}">`;
-        domString += `<h2>${hero.name}</h2>`;
-        domString += `<p><em>${hero.gender}</em></p>`;
-        domString += `<p>${hero.description}</p>`;
+    for (let i=0; i < heroes.length; i++) {
+        domString += `<div class='col-sm-3'>`;
+        domString +=    `<div class="panel panel-default ">`;
+        domString +=        `<div class="panel-heading">`;
+        domString +=            `<h3 class='panel-title'>${heroes[i].name}</h3>`;
+        domString +=        `</div>`;
+        domString +=        `<div class='panel-body'>`;
+        domString +=            `<img src='${heroes[i].image} class='charImage'>`;
+        domString +=            `<p class='charDescription'>${heroes[i].description}</p>`;
+        domString +=        `</div>`;
+        domString +=    `</div>`;
         domString += `</div>`;
-    });
+    };
     printToDom(domString, 'card-holder');
 }
 
